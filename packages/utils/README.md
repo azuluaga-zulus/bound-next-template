@@ -1,1 +1,2 @@
-# Utils library
+# @bound/utils
+Utils compartidos SSR/Browser-safe.
