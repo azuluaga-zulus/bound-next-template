@@ -1,19 +1,15 @@
-// eslint.config.mjs — ESLint 9 (flat) + Next 15 + TS + React
+// eslint.config.mjs — ESLint 9 (flat) + TS + React (sin next plugin roto)
 
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
-import nextPlugin from 'eslint-plugin-next';
 import globals from 'globals';
 
 export default [
   // Ignorar build y dependencias
   { ignores: ['node_modules', '.next', 'out', 'dist'] },
-
-  // 👇 Next en nivel raíz (así lo detecta Next.js)
-  ...nextPlugin.configs['core-web-vitals'],
 
   // Reglas base JS
   js.configs.recommended,
@@ -43,5 +39,41 @@ export default [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn'
     }
+  },
+
+  // --- Reglas para separar Server vs Client por convención .client.tsx ---
+  {
+    files: ['src/app/**/*.{ts,tsx}'],
+    ignores: ['**/*.client.tsx'], // excluye componentes cliente de este bloque
+    rules: {
+      // Prohíbe APIs de navegador en server
+      'no-restricted-globals': ['error',
+        'window',
+        'document',
+        'navigator',
+        'localStorage',
+        'location',
+        'history',
+        'Worker',
+        'File',
+        'Blob',
+        'BroadcastChannel'
+      ],
+      'no-restricted-imports': ['error', {
+        paths: [
+          { name: 'next/router', message: 'App Router: usa next/navigation en client o APIs de server equivalentes.' },
+          { name: 'react-dom/client', message: 'Solo en componentes cliente.' }
+        ]
+      }]
+    }
+  },
+  {
+    files: ['**/*.client.{ts,tsx}'],
+    // En archivos cliente se permiten APIs de navegador
+    rules: {
+      'no-restricted-globals': 'off',
+      'no-restricted-imports': 'off'
+    }
   }
 ];
+
