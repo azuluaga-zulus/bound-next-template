@@ -1,0 +1,12 @@
+{
+  "name": "@bound/config",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Configuraciones compartidas (tsconfig, eslint, prettier)",
+  "type": "module",
+  "exports": {
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./eslint/base.mjs": "./eslint/base.mjs",
+    "./prettier/base.json": "./prettier/base.json"
+  }
+}
