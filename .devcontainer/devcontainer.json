@@ -1,0 +1,28 @@
+{
+  "name": "BOUND Next Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "postCreateCommand": "corepack enable && pnpm install && pnpm run typecheck && pnpm run build || true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "files.autoSave": "off",
+    "typescript.tsdk": "node_modules/typescript/lib"
+  },
+  "forwardPorts": [3000, 5678, 8080],
+  "portsAttributes": {
+    "3000": { "label": "Next.js App" },
+    "5678": { "label": "Debugger" },
+    "8080": { "label": "n8n / Otros servicios" }
+  },
+  "remoteUser": "node"
+}
