@@ -15,7 +15,7 @@
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r --filter=!@bound/config exec tsc -p tsconfig.json --noEmit",
     "format": "pnpm -r format",
-    "test": "pnpm -r test"
+    "test": "pnpm -r --if-present test"
   },
   "engines": {
     "node": ">=20",
@@ -23,7 +23,10 @@
   },
   "packageManager": "pnpm@10.12.4",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.32.0",
+    "@types/node": "^24.2.0",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "eslint": "^9.32.0",
@@ -33,6 +36,7 @@
     "husky": "9.1.7",
     "lint-staged": "^16.1.4",
     "prettier": "^3.6.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   }
 }
