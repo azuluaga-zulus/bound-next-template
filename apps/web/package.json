@@ -1,0 +1,6 @@
+{
+  "name": "@bound/web",
+  "private": true,
+  "version": "0.0.0",
+  "description": "App web (Next.js) de Bound - placeholder"
+}
