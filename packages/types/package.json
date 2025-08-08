@@ -5,5 +5,8 @@
   "description": "Tipos compartidos de Bound",
   "exports": {
     ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@bound/config": "workspace:*"
   }
 }

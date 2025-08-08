@@ -2,5 +2,12 @@
   "name": "@bound/web",
   "private": true,
   "version": "0.0.0",
-  "description": "App web (Next.js) de Bound - placeholder"
+  "description": "App web (Next.js) de Bound - placeholder",
+  "devDependencies": {
+    "@bound/config": "workspace:*"
+  },
+  "dependencies": {
+    "@bound/types": "workspace:*",
+    "@bound/utils": "workspace:*"
+  }
 }

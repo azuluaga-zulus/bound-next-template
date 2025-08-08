@@ -2,5 +2,8 @@
   "name": "@bound/api",
   "private": true,
   "version": "0.0.0",
-  "description": "API de Bound - placeholder"
+  "description": "API de Bound - placeholder",
+  "devDependencies": {
+    "@bound/config": "workspace:*"
+  }
 }
