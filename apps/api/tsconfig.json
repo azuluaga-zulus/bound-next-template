@@ -1,0 +1,7 @@
+{
+  "extends": "@bound/config/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["src"]
+}

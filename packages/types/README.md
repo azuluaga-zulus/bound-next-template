@@ -1,0 +1,2 @@
+# @bound/types
+Tipos compartidos.

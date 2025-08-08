@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "eslint --fix",
+    "eslint -c eslint.config.mjs --parser @typescript-eslint/parser --ext .ts,.tsx --fix",
     "prettier --write"
   ],
   "*.json,*.css,*.md": [
