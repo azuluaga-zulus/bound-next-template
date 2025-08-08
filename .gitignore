@@ -17,3 +17,8 @@ yarn-debug.log*
 # OS
 .DS_Store
 *.tsbuildinfo
+
+# Playwright artifacts
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/blob-report/
