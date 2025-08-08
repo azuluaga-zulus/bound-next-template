@@ -16,7 +16,7 @@ export default [
 
   // Capa TS/React para tu código en src/**
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx}'], // <— en vez de 'src/**' o similares
     languageOptions: {
       parser: tsParser,
       ecmaVersion: 2023,
@@ -43,7 +43,7 @@ export default [
 
   // --- Reglas para separar Server vs Client por convención .client.tsx ---
   {
-    files: ['src/app/**/*.{ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}', 'apps/**/*.{ts,tsx}', 'packages/**/*.{ts,tsx}'],
     ignores: ['**/*.client.tsx'], // excluye componentes cliente de este bloque
     rules: {
       // Prohíbe APIs de navegador en server
